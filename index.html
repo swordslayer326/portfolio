@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourasish Roy | UI/UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Cursor Effects -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-container">
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <div class="theme-options" id="theme-options">
+                    <div class="theme-option normal" data-theme="normal"></div>
+                    <div class="theme-option dark" data-theme="dark"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div id="particles-js"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm Sourasish<br><span class="last-name">ROY</span></h1>
+                <div class="typewriter">
+                    <span class="typewriter-text"></span>
+                </div>
+                <div class="btn-container">
+                    <a href="#projects" class="btn btn-primary">VIEW MY WORK</a>
+                    <a href="Sourasish Roy UIUX Resume.pdf" class="btn btn-outline" target="_blank">DOWNLOAD RESUME</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="profile-pic.jpg" alt="Sourasish Roy">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Design-focused BCA student aspiring to craft intuitive digital experiences. Proficient in Figma, Canva, and Learning Adobe tools.</p>
+                    <div class="certificates">
+                        <div class="certificate-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>Coursera UI/UX Certification</span>
+                        </div>
+                        <div class="certificate-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>Hubspot Social Media Marketing Certificate</span>
+                        </div>
+                    </div>
+                    <div class="skills-chips">
+                        <div class="chip">Time Management</div>
+                        <div class="chip">Consistency</div>
+                        <div class="chip">Leadership</div>
+                        <div class="chip">Creativity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Highlight Section -->
+    <section class="skills-highlight">
+        <div class="container">
+            <div class="skills-highlight-content">
+<p>
+    In my journey as a budding UI/UX designer, I have developed and consistently applied a strong set of personal and professional skills that shape the way I approach every project. Time management plays a central role in my workflow, enabling me to balance multiple tasks effectively and meet tight deadlines without compromising on quality. 
+  </p>
+  <p>
+    Alongside this, my consistency ensures that I deliver steady progress and maintain high standards in every stage of design, from research and wireframing to prototyping and final presentation. I also bring strong leadership qualities to collaborative environments, where I enjoy guiding teams, facilitating open communication, and ensuring that everyone's strengths contribute to the final outcome. 
+  </p>
+  <p>
+    Most importantly, I thrive on creativity, constantly experimenting with fresh ideas, innovative design solutions, and user-centered approaches that not only solve problems but also create engaging, memorable digital experiences. Together, these skills define my design philosophy and reflect my commitment to growth, impact, and excellence in UI/UX.
+  </p>            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-pencil-alt"></i> Design Tools</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Figma</span>
+                                <span class="skill-percentage">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Canva</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Adobe illustrator</span>
+                                <span class="skill-percentage">45%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-star"></i> Core Skills</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Wireframing</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Prototyping</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Visual Design</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Communication</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Time Management</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Leadership</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title-light">
+                <h2>My Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <h3 class="project-title">MediBay
+                                <br> (AIgnite 2025)</h3>
+                            <p>Designed healthcare app UI in a hackathon</p>
+                            <div class="project-keywords">
+                                <span class="keyword">Innovation</span>
+                                <span class="keyword">Teamwork</span>
+                                <span class="keyword">Design Thinking</span>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>MediBay</h3>
+                            <p class="project-description">A healthcare app designed during AIgnite 2025 hackathon that connects patients with medical professionals through AI-powered recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3 class="project-title">Communeat (Designathon 2025)</h3>
+                            <p>Platform reducing food waste through community sharing</p>
+                            <div class="project-keywords">
+                                <span class="keyword">Social Impact</span>
+                                <span class="keyword">UX Research</span>
+                                <span class="keyword">Collaboration</span>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Communeat</h3>
+                            <p class="project-description">A community platform designed to reduce food waste by connecting neighbors, restaurants, and grocery stores 
+                        to share excess food.</p>
+<a href="https://www.figma.com/design/WRj6tXdsqbrcWBPZyWqQZW/Communeat?node-id=68-9&t=8xtmvacwS1pDabPG-1" target="_blank" class="btn">
+view project
+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image">
+                                <div class="cricket-icon">
+                                    <i class="fas fa-baseball-ball"></i>
+                                    <i class="fas fa-baseball-bat"></i>
+                                </div>
+                            </div>
+                            <h3 class="project-title">Cricket Bidding <br>(DataViz 2025)</h3>
+                            <p>Designed full UI simulating IPL bidding platform</p>
+                            <div class="project-keywords">
+                                <span class="keyword">Data Visualization</span>
+                                <span class="keyword">Engaging UX</span>
+                                <span class="keyword">Gamification</span>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Cricket Bidding Platform</h3>
+                            <p class="project-description">A fantasy cricket platform with bidding system that simulates IPL auctions, providing an engaging and gamified user experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements" id="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Achievements</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="achievement-title">Top 5 at Designathon 2025</h3>
+                    <p style="color: black;">Secured top 5 position among 200+ participants in a national design competition.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="achievement-title">AIgnite Hackathon Participant</h3>
+                    <p style="color: black;">Selected among top 50 teams to participate in national AI hackathon.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="achievement-title">Time Management</h3>
+                    <p style="color: black;"> Balanced academics, leadership roles, and design projects effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's connect!</h3>
+                    <h3>Feel free to reach out for collaborations or just a friendly hello.</h3>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/sourasish-roy/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sourasishr943@gmail.com&su=Hello&body=I%20want%20to%20connect%20with%20you." class="social-icon" target="_blank">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/8293605283?text=Hello%20I%20want%20to%20know%20more%20about%20your%20service" class="social-icon"><i class="fas fa-phone" target="_blank"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sourasish Roy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize loader
+            const loader = document.querySelector('.loader');
+            
+            // Hide loader when page is fully loaded
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    loader.classList.add('hidden');
+                }, 1000);
+            });
+
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } }
+                }
+            });
+
+            // Typing Animation
+            const texts = ["UI/UX Designer", "Creative Thinker", "Problem Solver"];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingDelay = 100;
+            let erasingDelay = 50;
+            let newTextDelay = 2000;
+            const typewriterText = document.querySelector('.typewriter-text');
+
+            function type() {
+                if (charIndex < texts[textIndex].length && !isDeleting) {
+                    typewriterText.textContent += texts[textIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingDelay);
+                } else if (isDeleting && charIndex > 0) {
+                    typewriterText.textContent = texts[textIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(type, erasingDelay);
+                } else {
+                    isDeleting = !isDeleting;
+                    if (!isDeleting) {
+                        textIndex = (textIndex + 1) % texts.length;
+                    }
+                    setTimeout(type, newTextDelay);
+                }
+            }
+
+            // Start typing animation after page loads
+            setTimeout(type, 1000);
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeOptions = document.getElementById('theme-options');
+            
+            themeToggle.addEventListener('click', function() {
+                themeOptions.classList.toggle('show');
+            });
+
+            // Close theme options when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!themeToggle.contains(e.target) && !themeOptions.contains(e.target)) {
+                    themeOptions.classList.remove('show');
+                }
+            });
+
+            // Apply theme
+            document.querySelectorAll('.theme-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const theme = this.getAttribute('data-theme');
+                    document.body.className = '';
+                    if (theme !== 'normal') {
+                        document.body.classList.add(`theme-${theme}`);
+                    }
+                    themeOptions.classList.remove('show');
+                });
+            });
+
+            // Back to top button
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Animate skill bars on scroll
+            const skillItems = document.querySelectorAll('.skill-item');
+            function animateSkills() {
+                skillItems.forEach(item => {
+                    const bar = item.querySelector('.skill-progress');
+                    const width = bar.getAttribute('data-width');
+                    if (isElementInViewport(item) && bar.style.width === '0px') {
+                        bar.style.width = width;
+                        item.classList.add('animated');
+                    }
+                });
+            }
+
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            window.addEventListener('scroll', animateSkills);
+            // Initial check on page load
+            animateSkills();
+
+            // Custom cursor effect
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorOutline = document.querySelector('.cursor-outline');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+                
+                cursorOutline.style.left = e.clientX + 'px';
+                cursorOutline.style.top = e.clientY + 'px';
+            });
+
+            // Add hover effect to interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .chip, .project-card, .social-icon');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', function() {
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorOutline.style.backgroundColor = 'rgba(230, 203, 179, 0.1)';
+                });
+                
+                el.addEventListener('mouseleave', function() {
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorOutline.style.backgroundColor = 'transparent';
+                });
+            });
+
+            // Add fade-in animation to sections on scroll
+            const sections = document.querySelectorAll('section');
+            function checkScroll() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight * 0.75) {
+                        section.style.opacity = 1;
+                        section.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initialize sections for animation
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', checkScroll);
+            // Initial check on page load
+            checkScroll();
+        });
+        document.querySelectorAll('.skill-progress').forEach(bar => {
+    let width = bar.getAttribute('data-width');
+    bar.style.width = width;
+  });
+    </script>
+</body>
+</html>
