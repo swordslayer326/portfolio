@@ -568,7 +568,9 @@
             background: var(--primary);
             color: var(--text-light);
             padding: 100px 0;
-            position: relative;
+        }
+        .projects p {
+          text-align: center;
         }
 
         .projects::before {
@@ -656,18 +658,18 @@
             color: var(--primary);
         }
 
-        .cricket-icon {
+        .sun-icon {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .cricket-icon i:first-child {
-            font-size: 3rem;
+        .sun-icon i:first-child {
+            font-size: 4rem;
         }
 
-        .cricket-icon i:last-child {
-            font-size: 2rem;
+        .sun-icon i:last-child {
+            font-size: 4rem;
         }
 
         .project-title {
