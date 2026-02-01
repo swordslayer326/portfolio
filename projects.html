@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects · Sourasish Roy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CINEMATIC VARIABLES ===== */
+        :root {
+            /* Color Palette */
+            --space-black: #050510;
+            --deep-navy: #0A0F24;
+            --cosmic-purple: #1A1448;
+            --electric-violet: #7B3FE4;
+            --neon-blue: #00D4FF;
+            --soft-cyan: #6EE7FF;
+            --cosmic-pink: #FF2E8A;
+            --star-white: #F0F4FF;
+            --accent-gold: #FFD700;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--electric-violet) 0%, var(--neon-blue) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--cosmic-pink) 0%, var(--electric-violet) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--accent-gold) 0%, #FFA500 100%);
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 4rem;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            --space-3xl: 8rem;
+            
+            /* Effects */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-circle: 50%;
+            --shadow-glow: 0 0 40px rgba(123, 63, 228, 0.4);
+            --shadow-glow-blue: 0 0 40px rgba(0, 212, 255, 0.4);
+            --shadow-glow-gold: 0 0 40px rgba(255, 215, 0, 0.4);
+            
+            /* Transitions */
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-zoop: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--space-black);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--star-white);
+            background: var(--space-black);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            opacity: 0;
+            animation: bodyFadeIn 1s var(--ease-smooth) forwards;
+        }
+
+        @keyframes bodyFadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Dynamic Background Animation */
+        .dynamic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
+            animation: floatAround 20s linear infinite;
+        }
+
+        .bg-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--electric-violet);
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .bg-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-blue);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .bg-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--cosmic-pink);
+            bottom: 10%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .bg-4 {
+            width: 250px;
+            height: 250px;
+            background: var(--soft-cyan);
+            top: 30%;
+            right: 20%;
+            animation-delay: -15s;
+        }
+
+        @keyframes floatAround {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -30px) scale(1.1);
+            }
+            50% {
+                transform: translate(30px, 40px) scale(0.9);
+            }
+            75% {
+                transform: translate(-40px, 20px) scale(1.05);
+            }
+        }
+
+        /* Animated Grid */
+        .animated-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(123, 63, 228, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(123, 63, 228, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+            animation: gridFlow 20s linear infinite;
+        }
+
+        @keyframes gridFlow {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100px 100px;
+            }
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: var(--text-6xl);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.5s forwards;
+        }
+
+        h2 {
+            font-size: var(--text-5xl);
+background: linear-gradient(135deg, #fff, #fff, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.7s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-subtitle {
+            font-size: var(--text-xl);
+            color: var(--soft-cyan);
+            font-weight: 500;
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: var(--space-xl);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.9s forwards;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+            backdrop-filter: blur(20px);
+            background: rgba(5, 5, 16, 0.85);
+            border-bottom: 1px solid rgba(123, 63, 228, 0.2);
+            transform: translateY(-100%);
+            transition: all 0.6s var(--ease-smooth);
+            animation: navSlideIn 1s var(--ease-elastic) 0.3s forwards;
+        }
+
+        @keyframes navSlideIn {
+            to { transform: translateY(0); }
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            text-decoration:none;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-elastic);
+            cursor: pointer;
+        }
+
+        .logo::before {
+            content: 'SR';
+            font-weight: 900;
+            font-size: var(--text-lg);
+            color: var(--star-white);
+            letter-spacing: -1px;
+            z-index: 2;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s var(--ease-smooth);
+        }
+
+        .logo:hover {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .logo:hover::after {
+            transform: translateX(100%);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-xl);
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--star-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: var(--space-xs) 0;
+            opacity: 0.8;
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.4s var(--ease-smooth);
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+            color: var(--neon-blue);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        .projects-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+                        padding-top: var(--space-3xl);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* ===== ENHANCED PROJECTS SHOWCASE ===== */
+        .projects-showcase {
+            background: linear-gradient(to bottom, var(--cosmic-purple), var(--deep-navy));
+            position: relative;
+            padding-bottom: var(--space-2xl);
+            padding-top: var(--space-lg);
+        }
+
+        /* Project Cards - One per line for better viewing */
+        .project-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2xl);
+            margin-top: var(--space-2xl);
+            width: 100%;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+            isolation: isolate;
+            transition: all 0.4s var(--ease-elastic);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: row;
+            min-height: 500px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 0.8s var(--ease-elastic) forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.3s; }
+        .project-card:nth-child(2) { animation-delay: 0.6s; }
+        .project-card:nth-child(3) { animation-delay: 0.9s; }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-smooth);
+            z-index: 1;
+            mix-blend-mode: overlay;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: var(--electric-violet);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .project-card:hover::before {
+            opacity: 0.2;
+        }
+
+        /* Project Preview (Left Side) */
+        .project-preview {
+            flex: 0 0 35%;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+        }
+
+        .project-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-smooth);
+            filter: brightness(0.9);
+        }
+
+        .project-card:hover .project-preview img {
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+
+        .preview-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, 
+                rgba(123, 63, 228, 0.3) 0%, 
+                rgba(0, 212, 255, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s var(--ease-smooth);
+        }
+
+        .project-card:hover .preview-overlay {
+            opacity: 1;
+        }
+
+        .preview-icon {
+            font-size: 4rem;
+            color: var(--star-white);
+            transform: scale(0.8);
+            transition: transform 0.4s var(--ease-elastic);
+        }
+
+        .project-card:hover .preview-icon {
+            transform: scale(1);
+        }
+
+        /* Project Info (Right Side) */
+        .project-info {
+            flex: 0 0 65%;
+            padding: var(--space-md);
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-category {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            color: var(--star-white);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--space-md);
+            align-self: flex-start;
+        }
+
+        .project-title {
+            color: var(--star-white);
+            margin-bottom: var(--space-md);
+            font-size: var(--text-3xl);
+            line-height: 1.2;
+        }
+
+        .project-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+            font-size: var(--text-md);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin: var(--space-lg) 0;
+        }
+
+        .project-tag {
+            padding: 6px 16px;
+            background: rgba(123, 63, 228, 0.2);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            color: var(--soft-cyan);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .project-card:hover .project-tag {
+            background: rgba(123, 63, 228, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: auto;
+        }
+
+        .btn {
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+            font-weight: 700;
+            font-size: var(--text-lg);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            transition: all 0.4s var(--ease-elastic);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--star-white);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: var(--shadow-glow-blue);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--star-white);
+            border: 2px solid rgba(123, 63, 228, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-4px);
+            border-color: var(--electric-violet);
+            background: rgba(123, 63, 228, 0.1);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Project-specific colors */
+        .communeat .project-category {
+            background: linear-gradient(135deg, #00B894, #00D4FF);
+        }
+
+        .cosmoxquest .project-category {
+            background: linear-gradient(135deg, #7B3FE4, #00D4FF);
+        }
+
+        .soundscape .project-category {
+            background: linear-gradient(135deg, #FF6B6B, #FFD93D);
+        }
+
+        /* ===== CASE STUDY MODALS ===== */
+        .case-study-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 5, 16, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: var(--space-xl);
+        }
+
+        .case-study-content {
+            max-width: 1000px;
+            margin: var(--space-2xl) auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(123, 63, 228, 0.3);
+            overflow: hidden;
+            position: relative;
+            backdrop-filter: blur(20px);
+            animation: modalAppear 0.6s var(--ease-elastic);
+        }
+
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-circle);
+            background: rgba(123, 63, 228, 0.2);
+            border: 1px solid rgba(123, 63, 228, 0.4);
+            color: var(--star-white);
+            font-size: var(--text-xl);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s var(--ease-smooth);
+            z-index: 100;
+        }
+
+        .close-modal:hover {
+            background: rgba(123, 63, 228, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .case-study-hero {
+            padding: var(--space-2xl);
+            background:linear-gradient(135deg, var(--electric-violet), #010848);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .metric-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s var(--ease-elastic);
+        }
+
+        .metric-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .metric-value {
+            font-size: var(--text-3xl);
+            font-weight: 900;
+            color: var(--star-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .metric-label {
+            font-size: var(--text-sm);
+            color: var(--soft-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: var(--space-3xl) 0 var(--space-xl);
+            text-align: center;
+            position: relative;
+            background: var(--space-black);
+            border-top: 1px solid rgba(123, 63, 228, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            padding: var(--space-xl);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(123, 63, 228, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-nav-link {
+            color: var(--star-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-base);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s var(--ease-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-nav-link:hover {
+            background: rgba(123, 63, 228, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer-nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: all 0.3s var(--ease-smooth);
+            transform: translateX(-50%);
+        }
+
+        .footer-nav-link:hover::before {
+            width: 80%;
+        }
+
+        .footer-copyright {
+            font-size: var(--text-sm);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: var(--text-5xl);
+            }
+            
+            h2 {
+                font-size: var(--text-4xl);
+            }
+            
+            .project-card {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .project-preview {
+                flex: 0 0 300px;
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-buttons {
+                flex-direction: column;
+            }
+            
+            .case-study-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-md);
+            }
+            
+            .nav-links {
+                gap: var(--space-md);
+            }
+            
+            .nav-link {
+                font-size: var(--text-xs);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: var(--text-4xl);
+            }
+            
+            h2 {
+                font-size: var(--text-3xl);
+            }
+            
+            .section-subtitle {
+                font-size: var(--text-lg);
+            }
+            
+            .project-title {
+                font-size: var(--text-2xl);
+            }
+            
+            .project-description {
+                font-size: var(--text-base);
+            }
+            
+            .project-tags {
+                gap: var(--space-xs);
+            }
+            
+            .project-tag {
+                padding: 4px 12px;
+                font-size: var(--text-xs);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Background -->
+    <div class="dynamic-bg">
+        <div class="bg-element bg-1"></div>
+        <div class="bg-element bg-2"></div>
+        <div class="bg-element bg-3"></div>
+        <div class="bg-element bg-4"></div>
+    </div>
+    <div class="animated-grid"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="SR Design Monogram"></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Hero -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>My Projects</h1>
+                <p class="section-subtitle">
+                    Where creativity meets user-centered solutions and business objectives align with exceptional experiences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section class="projects-showcase">
+        <div class="container">
+            <h2>Case Studies</h2>
+            <p class="section-subtitle">
+                In-depth explorations of my design process, from initial research to final implementation
+            </p>
+            <div class="project-grid">
+                <!-- Communeat -->
+                <div class="project-card communeat">
+                    <div class="project-preview" style="background: linear-gradient(45deg, #00B894, #00D4FF);">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80" alt="Communeat Project">
+                        <div class="preview-overlay">
+                            <div class="preview-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Social Impact</span>
+                        <h3 class="project-title">Communeat</h3>
+                        <p class="project-description">
+                            Communeat is a community-driven UI/UX concept aimed at reducing surplus food waste by building trust, coordination, and safety in local food sharing. The platform connects food donors, receivers, and volunteers through a simple, transparent flow that ensures excess food reaches the right people at the right time.
+                            <br><br>
+                            The project focuses heavily on user trust and accessibility—using clear status updates, verified profiles, and intuitive interactions to remove hesitation around food sharing. Designed for a Designathon Competition 2025 using Figma, this project challenged me to think beyond aesthetics and deeply consider real-world constraints, social impact, and human behavior, resulting in a solution that blends empathy, functionality, and purpose-driven design.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Community Design</span>
+                            <span class="project-tag">Social Impact</span>
+                            <span class="project-tag">Figma Prototyping</span>
+                            <span class="project-tag">User Trust</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-primary view-case-study" data-project="communeat">
+                                <i class="fas fa-eye"></i>
+                                View Case Study
+                            </button>
+                            <a href="#" class="btn btn-secondary" onclick="alert('Project link would open Figma prototype in a real portfolio')">
+                                <i class="fab fa-figma"></i>
+                                View Figma Prototype
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CosmoXQuest -->
+                <div class="project-card cosmoxquest">
+                    <div class="project-preview" style="background: linear-gradient(45deg, #7B3FE4, #00D4FF);">
+                        <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80" alt="CosmoXQuest Project">
+                        <div class="preview-overlay">
+                            <div class="preview-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Education & Immersion</span>
+                        <h3 class="project-title">CosmoXQuest</h3>
+                        <p class="project-description">
+                            CosmoXQuest is an immersive UI/UX concept designed to make learning about the universe engaging, intuitive, and fun. The project transforms complex astronomical information into an interactive experience where users can explore planets, understand their characteristics, and navigate space effortlessly through thoughtful visual hierarchy and motion design.
+                            <br><br>
+                            Built with a strong user-centered approach, CosmoXQuest focuses on simplifying learning through clear interactions, playful micro-animations, and visually rich storytelling. From ideation to high-fidelity prototyping in Figma, the project challenged me to balance education with immersion—resulting in an experience that feels less like studying and more like a guided journey through space.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Educational UX</span>
+                            <span class="project-tag">Motion Design</span>
+                            <span class="project-tag">Visual Storytelling</span>
+                            <span class="project-tag">Interactive Learning</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-primary view-case-study" data-project="cosmoxquest">
+                                <i class="fas fa-eye"></i>
+                                View Case Study
+                            </button>
+                            <a href="#" class="btn btn-secondary" onclick="alert('Project link would open Figma prototype in a real portfolio')">
+                                <i class="fab fa-figma"></i>
+                                View Figma Prototype
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SoundScape -->
+                <div class="project-card soundscape">
+                    <div class="project-preview" style="background: linear-gradient(45deg, #FF6B6B, #FFD93D);">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80" alt="SoundScape Project">
+                        <div class="preview-overlay">
+                            <div class="preview-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Experimental UX</span>
+                        <h3 class="project-title">SoundScape</h3>
+                        <p class="project-description">
+                            SoundScape is an experimental UI/UX concept that reimagines how people discover and experience music by putting visuals and emotion before playlists and genres. Instead of browsing through lists, users enter immersive visual "sound worlds" that represent different moods and energy levels, allowing them to feel the music before they hear it.
+                            <br><br>
+                            The project explores motion-led navigation, abstract interaction patterns, and visual storytelling to create a deeply engaging, sensory-first experience. Designing SoundScape challenged me to balance creativity with usability—ensuring the interface remains intuitive while pushing the boundaries of traditional music platforms. The concept is built with future scalability in mind, with clear pathways for real-world implementation using audio APIs and interactive web technologies.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Experimental Design</span>
+                            <span class="project-tag">Motion UI</span>
+                            <span class="project-tag">Sensory Experience</span>
+                            <span class="project-tag">Visual Music</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-primary view-case-study" data-project="soundscape">
+                                <i class="fas fa-eye"></i>
+                                View Case Study
+                            </button>
+                            <a href="#" class="btn btn-secondary" onclick="alert('Project link would open Figma prototype in a real portfolio')">
+                                <i class="fab fa-figma"></i>
+                                View Figma Prototype
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-nav">
+                    <a href="index.html" class="footer-nav-link">Home</a>
+                    <a href="about.html" class="footer-nav-link">About</a>
+                    <a href="projects.html" class="footer-nav-link">Projects</a>
+                    <a href="achievements.html" class="footer-nav-link">Achievements</a>
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                </div>
+                <p class="footer-copyright">
+                    © 2026 Sourasish Roy. All rights reserved. Crafted with passion and precision.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Case Study Modals -->
+    <div id="caseStudyModal" class="case-study-modal">
+        <button class="close-modal" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="caseStudyContent" class="case-study-content">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== NAVIGATION SCROLL EFFECT =====
+            const nav = document.querySelector('.nav');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll <= 0) {
+                    nav.style.transform = 'translateY(0)';
+                    return;
+                }
+                
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    nav.style.transform = 'translateY(-100%)';
+                } else {
+                    nav.style.transform = 'translateY(0)';
+                }
+                
+                lastScroll = currentScroll;
+            });
+
+            // ===== CASE STUDY MODALS =====
+            const caseStudyModal = document.getElementById('caseStudyModal');
+            const closeModal = document.getElementById('closeModal');
+            const caseStudyContent = document.getElementById('caseStudyContent');
+            const viewCaseStudyBtns = document.querySelectorAll('.view-case-study');
+            
+            // Project case study data
+            const caseStudies = {
+                communeat: {
+                    title: "Communeat",
+                    subtitle: "Reducing food waste through community-driven design",
+                    category: "Social Impact · Community · Figma Prototype",
+                    problem: "Every year, millions of tons of edible food are wasted while people in the same communities face food insecurity. Existing solutions lack trust mechanisms, clear communication, and intuitive coordination between donors, receivers, and volunteers.",
+                    solution: "A community platform with verified profiles, real-time status updates, and intuitive coordination tools that make food sharing safe, transparent, and effortless for everyone involved.",
+                    timeline: "Designathon 2025 (72 Hours)",
+                    role: "Solo Designer & Researcher",
+                    metrics: [
+                        { value: "100%", label: "Figma Prototype" },
+                        { value: "50+", label: "Screens Designed" },
+                        { value: "3 User", label: "Personas Created" },
+                        { value: "Top 10", label: "Designathon Rank" }
+                    ],
+                    process: [
+                        "Rapid user research & competitive analysis",
+                        "Three distinct user persona creation",
+                        "Low-fidelity wireframing & user flow mapping",
+                        "High-fidelity prototyping in Figma",
+                        "Interactive prototype with micro-interactions"
+                    ],
+                    features: [
+                        "Verified profiles with trust badges",
+                        "Real-time food availability updates",
+                        "Integrated chat & coordination system",
+                        "Food safety guidelines & instructions",
+                        "Volunteer matching & scheduling"
+                    ],
+                    technologies: ["Figma", "Figma Auto Layout", "Component Library", "Interactive Prototyping"],
+                    outcome: "Created a comprehensive design system for community food sharing that prioritizes trust, accessibility, and ease of use. The prototype demonstrates how thoughtful UX can address real-world social challenges through digital solutions."
+                },
+                cosmoxquest: {
+                    title: "CosmoXQuest",
+                    subtitle: "Making space exploration engaging through immersive design",
+                    category: "Educational UX · Motion Design · Visual Storytelling",
+                    problem: "Traditional astronomy learning platforms overwhelm users with dense text and complex data visualizations, making space exploration feel intimidating rather than exciting and accessible.",
+                    solution: "An immersive, gamified learning experience that uses motion, visual hierarchy, and interactive elements to make complex astronomical concepts intuitive and engaging for all age groups.",
+                    timeline: "Personal Project (4 Weeks)",
+                    role: "Solo Designer & Animator",
+                    metrics: [
+                        { value: "12+", label: "Interactive Planets" },
+                        { value: "40+", label: "Micro-animations" },
+                        { value: "8 User", label: "Testing Sessions" },
+                        { value: "4.8/5", label: "Usability Score" }
+                    ],
+                    process: [
+                        "User research with astronomy enthusiasts",
+                        "Information architecture & content strategy",
+                        "Motion design planning & storyboarding",
+                        "High-fidelity interactive prototyping",
+                        "Usability testing & iteration cycles"
+                    ],
+                    features: [
+                        "Interactive 3D planet exploration",
+                        "Progressive disclosure of information",
+                        "Gamified learning paths & achievements",
+                        "Adaptive difficulty based on user progress",
+                        "Shareable discoveries & progress tracking"
+                    ],
+                    technologies: ["Figma", "Principle for Mac", "Lottie Animations", "Design Systems"],
+                    outcome: "Developed a visually stunning educational platform that transforms complex space data into an engaging, intuitive experience. The project showcases how motion design and thoughtful interactions can enhance learning and retention."
+                },
+                soundscape: {
+                    title: "SoundScape",
+                    subtitle: "Redefining music discovery through visual emotion mapping",
+                    category: "Experimental UX · Sensory Design · Future Tech",
+                    problem: "Traditional music platforms rely on genre-based discovery, which often fails to capture the emotional and atmospheric qualities of music that listeners actually connect with.",
+                    solution: "A sensory-first music platform that uses visual emotion mapping, allowing users to discover music through mood, energy, and atmospheric qualities rather than traditional genre classifications.",
+                    timeline: "Experimental Project (6 Weeks)",
+                    role: "Solo Designer & Concept Developer",
+                    metrics: [
+                        { value: "8 Mood", label: "Sound Worlds" },
+                        { value: "100%", label: "Visual Navigation" },
+                        { value: "5 Concept", label: "Testing Sessions" },
+                        { value: "Future", label: "Ready Scalability" }
+                    ],
+                    process: [
+                        "Emotional mapping research & mood board creation",
+                        "Abstract interaction pattern development",
+                        "Motion-led navigation system design",
+                        "High-fidelity sensory interface prototyping",
+                        "Future technology integration planning"
+                    ],
+                    features: [
+                        "Visual mood-based music discovery",
+                        "Gesture-controlled navigation",
+                        "Dynamic visualizers that react to music",
+                        "Customizable sound environments",
+                        "Social sharing of emotional music journeys"
+                    ],
+                    technologies: ["Figma", "After Effects", "WebGL Concepts", "Audio API Integration"],
+                    outcome: "Created a groundbreaking music platform concept that challenges traditional discovery methods. The project demonstrates how experimental design thinking can lead to innovative solutions that better align with how people emotionally experience music."
+                }
+            };
+            
+            // Open case study modal
+            viewCaseStudyBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const study = caseStudies[projectId];
+                    
+                    caseStudyContent.innerHTML = `
+                        <div class="case-study-hero">
+                            <h2 style="margin-bottom: var(--space-sm); color: var(--star-white); font-size: var(--text-4xl);">${study.title}</h2>
+                            <p style="color: var(--star-white); margin-bottom: var(--space-md); opacity: 0.9; font-size: var(--text-xl);">${study.subtitle}</p>
+                            <div style="display: inline-block; padding: 10px 20px; background: rgba(255, 255, 255, 0.2); border-radius: var(--radius-sm); color: var(--star-white); font-size: var(--text-sm); margin-bottom: var(--space-xl); font-weight: 600;">
+                                ${study.category}
+                            </div>
+                            
+                            <div class="case-study-metrics">
+                                ${study.metrics.map(metric => `
+                                    <div class="metric-item">
+                                        <div class="metric-value">${metric.value}</div>
+                                        <div class="metric-label">${metric.label}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div style="padding: var(--space-xl);">
+                            <div style="display: grid; gap: var(--space-2xl);">
+                                <!-- The Problem -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-md); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        The Problem
+                                    </h3>
+                                    <div style="background: rgba(123, 63, 228, 0.1); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(123, 63, 228, 0.3);">
+                                        <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; font-size: var(--text-lg);">${study.problem}</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Our Solution -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-md); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-lightbulb"></i>
+                                        Our Solution
+                                    </h3>
+                                    <div style="background: rgba(0, 212, 255, 0.1); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(0, 212, 255, 0.3);">
+                                        <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; font-size: var(--text-lg);">${study.solution}</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Project Info -->
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg);">
+                                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                        <h4 style="color: var(--soft-cyan); margin-bottom: var(--space-sm); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 1px;">Timeline</h4>
+                                        <p style="font-size: var(--text-xl); font-weight: 700; color: var(--star-white);">${study.timeline}</p>
+                                    </div>
+                                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                        <h4 style="color: var(--soft-cyan); margin-bottom: var(--space-sm); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 1px;">My Role</h4>
+                                        <p style="font-size: var(--text-lg); font-weight: 600; color: var(--star-white);">${study.role}</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Design Process -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-md); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-project-diagram"></i>
+                                        Design Process
+                                    </h3>
+                                    <div style="background: rgba(255, 255, 255, 0.05); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(123, 63, 228, 0.3);">
+                                        <ul style="list-style: none; padding-left: 0; display: grid; gap: var(--space-md);">
+                                            ${study.process.map((step, index) => `
+                                                <li style="display: flex; align-items: flex-start; gap: var(--space-md);">
+                                                    <div style="width: 30px; height: 30px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; color: var(--star-white);">${index + 1}</div>
+                                                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; font-size: var(--text-lg);">${step}</p>
+                                                </li>
+                                            `).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- Key Features -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-md); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-star"></i>
+                                        Key Features
+                                    </h3>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md);">
+                                        ${study.features.map(feature => `
+                                            <div style="padding: var(--space-lg); background: rgba(123, 63, 228, 0.1); border-radius: var(--radius-lg); border: 1px solid rgba(123, 63, 228, 0.3); display: flex; align-items: center; gap: var(--space-md);">
+                                                <i class="fas fa-check-circle" style="color: var(--neon-blue); font-size: var(--text-xl); flex-shrink: 0;"></i>
+                                                <span style="color: var(--star-white); font-weight: 500; font-size: var(--text-lg);">${feature}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <!-- Technologies -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-md); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-tools"></i>
+                                        Technologies Used
+                                    </h3>
+                                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+                                        ${study.technologies.map(tech => `
+                                            <span style="padding: 10px 20px; background: rgba(0, 212, 255, 0.1); border-radius: var(--radius-lg); color: var(--neon-blue); font-weight: 600; font-size: var(--text-base);">
+                                                ${tech}
+                                            </span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <!-- Outcome -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-md); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-trophy"></i>
+                                        Outcome
+                                    </h3>
+                                    <div style="background: rgba(255, 215, 0, 0.1); border-radius: var(--radius-xl); padding: var(--space-xl); border: 1px solid rgba(255, 215, 0, 0.3);">
+                                        <p style="color: var(--star-white); line-height: 1.6; font-size: var(--text-xl); text-align: center; font-weight: 500;">${study.outcome}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    caseStudyModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close modal
+            closeModal.addEventListener('click', () => {
+                caseStudyModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal on outside click
+            caseStudyModal.addEventListener('click', (e) => {
+                if (e.target === caseStudyModal) {
+                    caseStudyModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // ===== LOGO INTERACTION =====
+            const logo = document.querySelector('.logo');
+            logo.addEventListener('mouseenter', () => {
+                logo.style.transform = 'scale(1.15) rotate(15deg)';
+                logo.style.boxShadow = 'var(--shadow-glow)';
+            });
+            
+            logo.addEventListener('mouseleave', () => {
+                logo.style.transform = 'scale(1) rotate(0)';
+                logo.style.boxShadow = 'none';
+            });
+
+            // ===== PROJECT CARD INTERACTIONS =====
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    const preview = card.querySelector('.project-preview');
+                    preview.style.transform = 'scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    const preview = card.querySelector('.project-preview');
+                    preview.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

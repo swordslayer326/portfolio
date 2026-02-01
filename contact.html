@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact · Sourasish Roy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CINEMATIC VARIABLES ===== */
+        :root {
+            /* Color Palette */
+            --space-black: #050510;
+            --deep-navy: #0A0F24;
+            --cosmic-purple: #1A1448;
+            --electric-violet: #7B3FE4;
+            --neon-blue: #00D4FF;
+            --soft-cyan: #6EE7FF;
+            --cosmic-pink: #FF2E8A;
+            --star-white: #F0F4FF;
+            --accent-gold: #FFD700;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--electric-violet) 0%, var(--neon-blue) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--cosmic-pink) 0%, var(--electric-violet) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--accent-gold) 0%, #FFA500 100%);
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 4rem;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            --space-3xl: 8rem;
+            
+            /* Effects */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-circle: 50%;
+            --shadow-glow: 0 0 40px rgba(123, 63, 228, 0.4);
+            --shadow-glow-blue: 0 0 40px rgba(0, 212, 255, 0.4);
+            --shadow-glow-gold: 0 0 40px rgba(255, 215, 0, 0.4);
+            
+            /* Transitions */
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-zoop: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--space-black);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--star-white);
+            background: var(--space-black);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            opacity: 0;
+            animation: bodyFadeIn 1s var(--ease-smooth) forwards;
+        }
+
+        @keyframes bodyFadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Dynamic Background Animation */
+        .dynamic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
+            animation: floatAround 20s linear infinite;
+        }
+
+        .bg-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--electric-violet);
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .bg-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-blue);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .bg-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--cosmic-pink);
+            bottom: 10%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .bg-4 {
+            width: 250px;
+            height: 250px;
+            background: var(--soft-cyan);
+            top: 30%;
+            right: 20%;
+            animation-delay: -15s;
+        }
+
+        @keyframes floatAround {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -30px) scale(1.1);
+            }
+            50% {
+                transform: translate(30px, 40px) scale(0.9);
+            }
+            75% {
+                transform: translate(-40px, 20px) scale(1.05);
+            }
+        }
+
+        /* Animated Grid */
+        .animated-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(123, 63, 228, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(123, 63, 228, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+            animation: gridFlow 20s linear infinite;
+        }
+
+        @keyframes gridFlow {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100px 100px;
+            }
+        }
+
+        /* Floating Contact Icons */
+        .floating-contact {
+            position: fixed;
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            opacity: 0.1;
+            z-index: -1;
+            animation: floatContact 15s linear infinite;
+        }
+
+        .contact-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .contact-2 {
+            top: 50%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+
+        .contact-3 {
+            bottom: 20%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatContact {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(40px, -25px) rotate(90deg);
+            }
+            50% {
+                transform: translate(25px, 35px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-35px, 15px) rotate(270deg);
+            }
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        .hero-content h1{
+            line-height: normal;
+        }
+        h1 {
+            font-size: var(--text-6xl);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.5s forwards;
+        }
+
+        h2 {
+            font-size: var(--text-5xl);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.7s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-subtitle {
+            font-size: var(--text-xl);
+            color: var(--soft-cyan);
+            font-weight: 500;
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: var(--space-xl);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.9s forwards;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+            backdrop-filter: blur(20px);
+            background: rgba(5, 5, 16, 0.85);
+            border-bottom: 1px solid rgba(123, 63, 228, 0.2);
+            transform: translateY(-100%);
+            transition: all 0.6s var(--ease-smooth);
+            animation: navSlideIn 1s var(--ease-elastic) 0.3s forwards;
+        }
+
+        @keyframes navSlideIn {
+            to { transform: translateY(0); }
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-primary);
+            display: flex;
+            text-decoration:none;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-elastic);
+            cursor: pointer;
+        }
+
+        .logo::before {
+            content: 'SR';
+            font-weight: 900;
+            font-size: var(--text-lg);
+            color: var(--star-white);
+            letter-spacing: -1px;
+            z-index: 2;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s var(--ease-smooth);
+        }
+
+        .logo:hover {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .logo:hover::after {
+            transform: translateX(100%);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-xl);
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--star-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: var(--space-xs) 0;
+            opacity: 0.8;
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.4s var(--ease-smooth);
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+            color: var(--neon-blue);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ===== CONTACT HERO ===== */
+        .contact-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            
+            padding-top: var(--space-3xl);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ===== ENHANCED CONTACT SECTION ===== */
+        .contact-section {
+                        position: relative;
+            padding-bottom: var(--space-3xl);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Three Cards in One Line */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            border: 1px solid rgba(123, 63, 228, 0.2);
+            transition: all 0.4s var(--ease-elastic);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.8s var(--ease-elastic) forwards;
+        }
+
+        .contact-item:nth-child(1) { animation-delay: 0.3s; }
+        .contact-item:nth-child(2) { animation-delay: 0.6s; }
+        .contact-item:nth-child(3) { animation-delay: 0.9s; }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--electric-violet);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .contact-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-circle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            color: var(--star-white);
+            margin: 0 auto var(--space-lg);
+            transition: transform 0.3s var(--ease-elastic);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .contact-details h3 {
+            color: var(--star-white);
+            margin-bottom: var(--space-md);
+            font-size: var(--text-2xl);
+        }
+
+        .contact-value {
+            font-size: var(--text-xl);
+            color: var(--soft-cyan);
+            margin-bottom: var(--space-lg);
+            font-weight: 600;
+        }
+
+        .btn {
+            padding:20px 30px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: var(--text-lg);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            transition: all 0.4s var(--ease-elastic);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--star-white);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: var(--shadow-glow-blue);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--star-white);
+            border: 2px solid rgba(123, 63, 228, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-4px);
+            border-color: var(--electric-violet);
+            background: rgba(123, 63, 228, 0.1);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .copy-success {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: var(--star-white);
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            opacity: 0;
+            transition: opacity 0.3s var(--ease-smooth);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .copy-success.show {
+            opacity: 1;
+        }
+
+        /* ===== LOCATION & AVAILABILITY BOX ===== */
+        .location-availability {
+            background: linear-gradient(to bottom, var(--deep-navy), var(--cosmic-purple));
+            position: relative;
+            padding: var(--space-3xl) 0;
+        }
+
+        .location-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            border: 1px solid rgba(123, 63, 228, 0.2);
+            max-width: 1000px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.8s var(--ease-elastic) 1.2s forwards;
+        }
+
+        .location-content {
+            padding-right: var(--space-xl);
+        }
+
+        .location-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .location-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-2xl);
+            color: var(--star-white);
+        }
+
+        .location-details h3 {
+            color: var(--star-white);
+            margin-bottom: var(--space-xs);
+            font-size: var(--text-2xl);
+        }
+
+        .location-details p {
+            color: var(--soft-cyan);
+            font-size: var(--text-lg);
+        }
+
+        .availability-content {
+            padding-left: var(--space-xl);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .availability h4 {
+            color: var(--neon-blue);
+            margin-bottom: var(--space-lg);
+            font-size: var(--text-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .availability-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        .availability-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            padding: var(--space-md);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .availability-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(123, 63, 228, 0.2);
+            transform: translateX(5px);
+        }
+
+        .availability-day {
+            font-weight: 600;
+            color: var(--star-white);
+            font-size: var(--text-base);
+        }
+
+        .availability-time {
+            color: var(--soft-cyan);
+            font-size: var(--text-sm);
+        }
+
+        /* ===== SOCIAL CONNECTIONS ===== */
+        .social-connections {
+            
+            position: relative;
+            padding: var(--space-3xl) 0;
+        }
+
+        .social-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.4s var(--ease-elastic);
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            color: var(--star-white);
+            display: block;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.8s var(--ease-elastic) forwards;
+        }
+
+        .social-card:nth-child(1) { animation-delay: 0.5s; }
+        .social-card:nth-child(2) { animation-delay: 0.8s; }
+
+        .social-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--electric-violet);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .social-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-circle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-4xl);
+            margin: 0 auto var(--space-lg);
+            transition: all 0.3s var(--ease-elastic);
+        }
+
+        .social-card:hover .social-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .social-card.linkedin .social-icon {
+            background: linear-gradient(135deg, #0077B5, #00A0DC);
+        }
+
+        .social-card.instagram .social-icon {
+            background: linear-gradient(135deg, #E4405F, #FD1D1D);
+        }
+
+        .social-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-top: var(--space-md);
+        }
+
+        .social-stat {
+            text-align: center;
+        }
+
+        .social-number {
+            font-size: var(--text-3xl);
+            font-weight: 900;
+            color: var(--neon-blue);
+            margin-bottom: var(--space-xs);
+            transition: all 0.3s var(--ease-elastic);
+        }
+
+        .social-card:hover .social-number {
+            transform: scale(1.2);
+        }
+
+        .social-label {
+            font-size: var(--text-sm);
+            color: var(--soft-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== HUMOR SECTION ===== */
+        .humor-section {
+            background:linear-gradient(135deg, var(--electric-violet), #1a1448);
+            padding: var(--space-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .humor-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .humor-icon {
+            font-size: var(--text-4xl);
+            color: var(--star-white);
+            margin-bottom: var(--space-lg);
+            animation: humorFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes humorFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            25% { 
+                transform: translateY(-10px) rotate(5deg); 
+            }
+            50% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            75% { 
+                transform: translateY(10px) rotate(-5deg); 
+            }
+        }
+
+        .humor-text {
+            font-size: var(--text-2xl);
+            color: var(--star-white);
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: var(--space-lg);
+            font-weight: 300;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .humor-subtext {
+            font-size: var(--text-lg);
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: var(--space-3xl) 0 var(--space-xl);
+            text-align: center;
+            position: relative;
+            background: var(--space-black);
+            border-top: 1px solid rgba(123, 63, 228, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            padding: var(--space-xl);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(123, 63, 228, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-nav-link {
+            color: var(--star-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-base);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s var(--ease-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-nav-link:hover {
+            background: rgba(123, 63, 228, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer-nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: all 0.3s var(--ease-smooth);
+            transform: translateX(-50%);
+        }
+
+        .footer-nav-link:hover::before {
+            width: 80%;
+        }
+
+        .footer-copyright {
+            font-size: var(--text-sm);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: var(--text-5xl);
+            }
+            
+            h2 {
+                font-size: var(--text-4xl);
+            }
+            
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto var(--space-2xl);
+            }
+            
+            .location-box {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+            
+            .location-content {
+                padding-right: 0;
+            }
+            
+            .availability-content {
+                padding-left: 0;
+                border-left: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: var(--space-xl);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .social-cards {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: var(--space-2xl) auto 0;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-md);
+            }
+            
+            .nav-links {
+                gap: var(--space-md);
+            }
+            
+            .nav-link {
+                font-size: var(--text-xs);
+            }
+            
+            .humor-text {
+                font-size: var(--text-xl);
+            }
+            
+            .contact-item {
+                min-height: 300px;
+                padding: var(--space-lg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: var(--text-4xl);
+            }
+            
+            h2 {
+                font-size: var(--text-3xl);
+            }
+            
+            .section-subtitle {
+                font-size: var(--text-lg);
+            }
+            
+            .contact-icon {
+                width: 80px;
+                height: 80px;
+                font-size: var(--text-2xl);
+            }
+            
+            .contact-value {
+                font-size: var(--text-lg);
+            }
+            
+            .btn {
+                padding: var(--space-md) var(--space-lg);
+                font-size: var(--text-base);
+            }
+            
+            .humor-text {
+                font-size: var(--text-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Background -->
+    <div class="dynamic-bg">
+        <div class="bg-element bg-1"></div>
+        <div class="bg-element bg-2"></div>
+        <div class="bg-element bg-3"></div>
+        <div class="bg-element bg-4"></div>
+    </div>
+    <div class="animated-grid"></div>
+
+    <!-- Floating Contact Icons -->
+    <div class="floating-contact contact-1">
+        <i class="fas fa-envelope"></i>
+    </div>
+    <div class="floating-contact contact-2">
+        <i class="fas fa-phone"></i>
+    </div>
+    <div class="floating-contact contact-3">
+        <i class="fab fa-linkedin-in"></i>
+    </div>
+    
+    
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="SR Design Monogram"></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Let's Create Together</h1>
+                <p class="section-subtitle">
+                    Ready to transform your ideas into exceptional digital experiences? Let's collaborate to create something meaningful, beautiful, and impactful.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">
+                Whether you have a project in mind, need design consultation, or just want to chat about UX/UI design, I'd love to hear from you.
+            </p>
+            
+            <div class="contact-container">
+                <div class="contact-info-grid">
+                 <!-- Phone -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p class="contact-value">+91 98765 43210</p>
+                            <div style="position: relative; width: 100%;">
+                                <button class="btn btn-secondary" id="phoneBtn">
+                                    <i class="fas fa-copy"></i>
+                                    Copy Number
+                                </button>
+                                <div class="copy-success" id="copySuccess">Copied to clipboard!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p class="contact-value">swordslayer326@gmail.com</p>
+                            <button class="btn btn-primary" id="emailBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send<br> Email
+                            </button>
+                        </div> 
+                    </div>
+                    
+                    <!-- LinkedIn -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p class="contact-value">Sourasish Roy</p>
+                            <a href="https://www.linkedin.com/in/sourasish-roy-uiux/" target="_blank" class="btn btn-primary">
+                                <i class="fab fa-linkedin-in"></i>
+                                Connect on LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Availability -->
+    <section class="location-availability">
+        <div class="container">
+            <div class="location-box">
+                <div class="location-content">
+                    <div class="location-header">
+                        <div class="location-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location-details">
+                            <h3>Location</h3>
+                            <p>Siliguri, West Bengal</p>
+                            <p style="color: var(--soft-cyan); font-size: var(--text-base); margin-top: var(--space-xs);">Open to remote work worldwide</p>
+                        </div>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-top: var(--space-md);">
+                        Based in the beautiful foothills of the Himalayas, I work with clients and teams across the globe. Time zones are just numbers when passion drives the work.
+                    </p>
+                </div>
+                
+                <div class="availability-content">
+                    <div class="availability">
+                        <h4><i class="fas fa-clock"></i> Availability</h4>
+                        <div class="availability-grid">
+                            <div class="availability-item">
+                                <span class="availability-day">Monday - Friday</span>
+                                <span class="availability-time">10:00 AM - 6:00 PM IST</span>
+                            </div>
+                            <div class="availability-item">
+                                <span class="availability-day">Weekends</span>
+                                <span class="availability-time">Available for urgent projects</span>
+                            </div>
+                            <div class="availability-item">
+                                <span class="availability-day">Response Time</span>
+                                <span class="availability-time">Within 24 hours</span>
+                            </div>
+                            <div class="availability-item">
+                                <span class="availability-day">Meeting Preference</span>
+                                <span class="availability-time">Video calls preferred</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect with my socials -->
+    <section class="social-connections">
+        <div class="container">
+            <h2>Connect with my socials</h2>
+            <p class="section-subtitle">
+                Follow my design journey and connect with me on professional networks
+            </p>
+            
+            <div class="social-cards">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/sourasish-roy" target="_blank" class="social-card linkedin">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>Professional network & design insights</p>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <div class="social-number">2.7K+</div>
+                            <div class="social-label">Followers</div>
+                        </div>
+                        <div class="social-stat">
+                            <div class="social-number">500+</div>
+                            <div class="social-label">Connections</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/sourasish.design" target="_blank" class="social-card instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Behind-the-scenes of a designer's life!</p>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <div class="social-number">3K+</div>
+                            <div class="social-label">Followers</div>
+                        </div>
+                        <div class="social-stat">
+                            <div class="social-number">10+</div>
+                            <div class="social-label">Posts</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Humor Section -->
+    <section class="humor-section">
+        <div class="container">
+            <div class="humor-content">
+                <div class="humor-icon">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <p class="humor-text">
+                    "I design interfaces so intuitive, even my coffee mug understands them. (It still spills, but that's a different problem.)"
+                </p>
+                <p class="humor-subtext">
+                    P.S. I also fix coffee-related UX issues. Just saying.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-nav">
+                    <a href="index.html" class="footer-nav-link">Home</a>
+                    <a href="about.html" class="footer-nav-link">About</a>
+                    <a href="projects.html" class="footer-nav-link">Projects</a>
+                    <a href="achievements.html" class="footer-nav-link">Achievements</a>
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                </div>
+                <p class="footer-copyright">
+                    © 2026 Sourasish Roy. All rights reserved. Crafted with passion and precision (and occasional coffee spills).
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== NAVIGATION SCROLL EFFECT =====
+            const nav = document.querySelector('.nav');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll <= 0) {
+                    nav.style.transform = 'translateY(0)';
+                    return;
+                }
+                
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    nav.style.transform = 'translateY(-100%)';
+                } else {
+                    nav.style.transform = 'translateY(0)';
+                }
+                
+                lastScroll = currentScroll;
+            });
+
+            // ===== EMAIL BUTTON =====
+            const emailBtn = document.getElementById('emailBtn');
+            emailBtn.addEventListener('click', function() {
+                window.location.href = 'mailto:hello@sourasish.design?subject=Design%20Inquiry&body=Hello%20Sourasish,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0D%0A%0D%0ABest%20regards,';
+            });
+            
+            // ===== PHONE COPY FUNCTIONALITY =====
+            const phoneBtn = document.getElementById('phoneBtn');
+            const copySuccess = document.getElementById('copySuccess');
+            
+            phoneBtn.addEventListener('click', function() {
+                const phoneNumber = '+919876543210';
+                
+                // Create a temporary input element
+                const tempInput = document.createElement('input');
+                tempInput.value = phoneNumber;
+                document.body.appendChild(tempInput);
+                
+                // Select and copy the text
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999); // For mobile devices
+                
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        // Show success message
+                        copySuccess.classList.add('show');
+                        
+                        // Hide message after 2 seconds
+                        setTimeout(() => {
+                            copySuccess.classList.remove('show');
+                        }, 2000);
+                        
+                        // Change button text temporarily
+                        const originalHTML = phoneBtn.innerHTML;
+                        phoneBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        phoneBtn.style.background = 'var(--gradient-primary)';
+                        
+                        setTimeout(() => {
+                            phoneBtn.innerHTML = originalHTML;
+                            phoneBtn.style.background = '';
+                        }, 2000);
+                    }
+                } catch (err) {
+                    console.error('Failed to copy: ', err);
+                }
+                
+                // Remove temporary input
+                document.body.removeChild(tempInput);
+            });
+            
+            // ===== SOCIAL CARDS ANIMATION =====
+            const socialCards = document.querySelectorAll('.social-card');
+            
+            socialCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.social-icon');
+                    const numbers = this.querySelectorAll('.social-number');
+                    
+                    // Animate icon
+                    icon.style.transform = 'scale(1.1) rotate(10deg)';
+                    
+                    // Animate numbers
+                    numbers.forEach(number => {
+                        number.style.transform = 'scale(1.2)';
+                        setTimeout(() => {
+                            number.style.transform = 'scale(1)';
+                        }, 200);
+                    });
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.social-icon');
+                    icon.style.transform = 'scale(1) rotate(0)';
+                });
+            });
+
+            // ===== CONTACT ITEMS INTERACTION =====
+            const contactItems = document.querySelectorAll('.contact-item');
+            
+            contactItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const icon = item.querySelector('.contact-icon');
+                    icon.style.animation = 'none';
+                    icon.offsetHeight; // Trigger reflow
+                    icon.style.animation = null;
+                });
+            });
+
+            // ===== LOGO INTERACTION =====
+            const logo = document.querySelector('.logo');
+            logo.addEventListener('mouseenter', () => {
+                logo.style.transform = 'scale(1.15) rotate(15deg)';
+                logo.style.boxShadow = 'var(--shadow-glow)';
+            });
+            
+            logo.addEventListener('mouseleave', () => {
+                logo.style.transform = 'scale(1) rotate(0)';
+                logo.style.boxShadow = 'none';
+            });
+
+            // ===== AVAILABILITY ITEMS INTERACTION =====
+            const availabilityItems = document.querySelectorAll('.availability-item');
+            
+            availabilityItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'translateX(5px)';
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'translateX(0)';
+                });
+            });
+
+            // ===== FLOATING CONTACT ICONS =====
+            const floatingContacts = document.querySelectorAll('.floating-contact');
+            
+            setInterval(() => {
+                floatingContacts.forEach(contact => {
+                    const currentAnimation = contact.style.animation;
+                    contact.style.animation = 'none';
+                    contact.offsetHeight; // Trigger reflow
+                    contact.style.animation = currentAnimation;
+                });
+            }, 15000); // Restart animation every 15 seconds
+        });
+    </script>
+</body>
+</html>

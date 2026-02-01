@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements · Sourasish Roy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CINEMATIC VARIABLES ===== */
+        :root {
+            /* Color Palette */
+            --space-black: #050510;
+            --deep-navy: #0A0F24;
+            --cosmic-purple: #1A1448;
+            --electric-violet: #7B3FE4;
+            --neon-blue: #00D4FF;
+            --soft-cyan: #6EE7FF;
+            --cosmic-pink: #FF2E8A;
+            --star-white: #F0F4FF;
+            --accent-gold: #FFD700;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--electric-violet) 0%, var(--neon-blue) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--cosmic-pink) 0%, var(--electric-violet) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--accent-gold) 0%, #FFA500 100%);
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 4rem;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            --space-3xl: 8rem;
+            
+            /* Effects */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-circle: 50%;
+            --shadow-glow: 0 0 40px rgba(123, 63, 228, 0.4);
+            --shadow-glow-blue: 0 0 40px rgba(0, 212, 255, 0.4);
+            --shadow-glow-gold: 0 0 40px rgba(255, 215, 0, 0.4);
+            
+            /* Transitions */
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-zoop: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--space-black);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--star-white);
+            background: var(--space-black);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            opacity: 0;
+            animation: bodyFadeIn 1s var(--ease-smooth) forwards;
+        }
+
+        @keyframes bodyFadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Dynamic Background Animation */
+        .dynamic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
+            animation: floatAround 20s linear infinite;
+        }
+
+        .bg-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--electric-violet);
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .bg-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-blue);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .bg-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--cosmic-pink);
+            bottom: 10%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .bg-4 {
+            width: 250px;
+            height: 250px;
+            background: var(--soft-cyan);
+            top: 30%;
+            right: 20%;
+            animation-delay: -15s;
+        }
+
+        @keyframes floatAround {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -30px) scale(1.1);
+            }
+            50% {
+                transform: translate(30px, 40px) scale(0.9);
+            }
+            75% {
+                transform: translate(-40px, 20px) scale(1.05);
+            }
+        }
+
+        /* Animated Grid */
+        .animated-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(123, 63, 228, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(123, 63, 228, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+            animation: gridFlow 20s linear infinite;
+        }
+
+        @keyframes gridFlow {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100px 100px;
+            }
+        }
+
+        /* Floating Trophies */
+        .floating-trophy {
+            position: fixed;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            opacity: 0.1;
+            z-index: -1;
+            animation: floatTrophy 20s linear infinite;
+        }
+
+        .trophy-1 {
+            top: 15%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .trophy-2 {
+            top: 40%;
+            right: 20%;
+            animation-delay: -7s;
+        }
+
+        .trophy-3 {
+            bottom: 25%;
+            left: 25%;
+            animation-delay: -14s;
+        }
+
+        @keyframes floatTrophy {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(30px, -20px) rotate(90deg);
+            }
+            50% {
+                transform: translate(20px, 30px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-30px, 10px) rotate(270deg);
+            }
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: var(--text-6xl);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.5s forwards;
+        }
+
+        
+        h2 {
+            font-size: var(--text-5xl);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.7s forwards;
+        }
+        .container h2 {
+            font-size: var(--text-5xl);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding: var(--space-lg);
+            opacity: 0;
+            text-align: center;
+            transform: translateY(30px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.7s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-subtitle {
+            font-size: var(--text-xl);
+            color: var(--soft-cyan);
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: var(--space-xl);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s var(--ease-elastic) 0.9s forwards;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .section {
+            padding: var(--space-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+            backdrop-filter: blur(20px);
+            background: rgba(5, 5, 16, 0.85);
+            border-bottom: 1px solid rgba(123, 63, 228, 0.2);
+            transform: translateY(-100%);
+            transition: all 0.6s var(--ease-smooth);
+            animation: navSlideIn 1s var(--ease-elastic) 0.3s forwards;
+        }
+
+        @keyframes navSlideIn {
+            to { transform: translateY(0); }
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            text-decoration:none;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-elastic);
+            cursor: pointer;
+        }
+
+        .logo::before {
+            content: 'SR';
+            font-weight: 900;
+            font-size: var(--text-lg);
+            color: var(--star-white);
+            letter-spacing: -1px;
+            z-index: 2;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s var(--ease-smooth);
+        }
+
+        .logo:hover {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .logo:hover::after {
+            transform: translateX(100%);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-xl);
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--star-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: var(--space-xs) 0;
+            opacity: 0.8;
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.4s var(--ease-smooth);
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+            color: var(--neon-blue);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ===== ACHIEVEMENTS HERO ===== */
+        .achievements-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--space-black) 0%, var(--deep-navy) 100%);
+            padding-top: var(--space-3xl);
+            text-align: center;
+        }
+
+        /* ===== ENHANCED TIMELINE ===== */
+        .achievements-timeline {
+            background: linear-gradient(to bottom, var(--deep-navy), var(--cosmic-purple));
+            position: relative;
+            padding-bottom: var(--space-3xl);
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline {
+            margin: var(--space-2xl) auto 0;
+            position: relative;
+            padding: var(--space-xl) 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-primary);
+            opacity: 0.3;
+            transform: translateX(-50%);
+            animation: timelinePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes timelinePulse {
+            0%, 100% {
+                opacity: 0.3;
+                box-shadow: 0 0 20px var(--electric-violet);
+            }
+            50% {
+                opacity: 0.6;
+                box-shadow: 0 0 40px var(--electric-violet);
+            }
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: var(--space-2xl);
+            position: relative;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.8s var(--ease-elastic) forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.9s; }
+        .timeline-item:nth-child(4) { animation-delay: 1.2s; }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            border: 1px solid rgba(123, 63, 228, 0.2);
+            position: relative;
+            transition: all 0.4s var(--ease-elastic);
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-8px);
+            border-color: var(--electric-violet);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--electric-violet);
+            z-index: 1;
+            animation: markerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes markerPulse {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 0 20px var(--electric-violet);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.2);
+                box-shadow: 0 0 30px var(--electric-violet);
+            }
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-circle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: var(--text-sm);
+            color: var(--star-white);
+            box-shadow: var(--shadow-glow);
+            z-index: 2;
+            transition: all 0.3s var(--ease-elastic);
+        }
+
+        .timeline-item:hover .timeline-year {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -30px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -30px;
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-2xl);
+            color: var(--star-white);
+            margin-bottom: var(--space-md);
+            transition: transform 0.3s var(--ease-elastic);
+        }
+
+        .timeline-item:hover .achievement-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .achievement-content h3 {
+            color: var(--star-white);
+            margin-bottom: var(--space-sm);
+            font-size: var(--text-xl);
+        }
+
+        .achievement-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+
+        .achievement-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+
+        .skill-tag {
+            padding: 6px 16px;
+            background: rgba(123, 63, 228, 0.2);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            color: var(--soft-cyan);
+            font-weight: 600;
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .timeline-item:hover .skill-tag {
+            background: rgba(123, 63, 228, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* ===== ENHANCED CERTIFICATIONS ===== */
+        .certifications {
+            background: linear-gradient(to bottom, var(--cosmic-purple), var(--deep-navy));
+            position: relative;
+            padding-bottom: var(--space-3xl);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .certification-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            border: 1px solid rgba(123, 63, 228, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-elastic);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.8s var(--ease-elastic) forwards;
+        }
+
+        .certification-card:nth-child(1) { animation-delay: 0.3s; }
+        .certification-card:nth-child(2) { animation-delay: 0.5s; }
+        .certification-card:nth-child(3) { animation-delay: 0.7s; }
+        .certification-card:nth-child(4) { animation-delay: 0.9s; }
+        .certification-card:nth-child(5) { animation-delay: 1.1s; }
+        .certification-card:nth-child(6) { animation-delay: 1.3s; }
+
+        .certification-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--electric-violet);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .certification-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .certification-badge {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            color: var(--star-white);
+            flex-shrink: 0;
+            transition: transform 0.3s var(--ease-elastic);
+        }
+
+        .certification-card:hover .certification-badge {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .certification-title h3 {
+            color: var(--star-white);
+            margin: var(--space-xs);
+            font-size: var(--text-xl);
+        }
+
+        .certification-issuer {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            color: var(--neon-blue);
+            font-weight: 600;
+        }
+
+        .certification-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+            flex-grow: 1;
+        }
+
+        .certification-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-lg);
+        }
+
+        .certification-buttons {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: auto;
+        }
+
+        .btn {
+            padding: 20px 30px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: var(--text-lg);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            transition: all 0.4s var(--ease-elastic);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--star-white);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: var(--shadow-glow-blue);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--star-white);
+            border: 2px solid rgba(123, 63, 228, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-4px);
+            border-color: var(--electric-violet);
+            background: rgba(123, 63, 228, 0.1);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* ===== MODAL STYLES ===== */
+        .learnings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 5, 16, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: var(--space-xl);
+        }
+
+        .modal-content {
+            max-width: 800px;
+            margin: var(--space-2xl) auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(123, 63, 228, 0.3);
+            overflow: hidden;
+            position: relative;
+            backdrop-filter: blur(20px);
+            animation: modalAppear 0.6s var(--ease-elastic);
+        }
+
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-circle);
+            background: rgba(123, 63, 228, 0.2);
+            border: 1px solid rgba(123, 63, 228, 0.4);
+            color: var(--star-white);
+            font-size: var(--text-xl);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s var(--ease-smooth);
+            z-index: 100;
+        }
+
+        .close-modal:hover {
+            background: rgba(123, 63, 228, 0.4);
+            transform: rotate(90deg);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: var(--space-3xl) 0 var(--space-xl);
+            text-align: center;
+            position: relative;
+            background: var(--space-black);
+            border-top: 1px solid rgba(123, 63, 228, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            padding: var(--space-xl);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(123, 63, 228, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-nav-link {
+            color: var(--star-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-base);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s var(--ease-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-nav-link:hover {
+            background: rgba(123, 63, 228, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer-nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: all 0.3s var(--ease-smooth);
+            transform: translateX(-50%);
+        }
+
+        .footer-nav-link:hover::before {
+            width: 80%;
+        }
+
+        .footer-copyright {
+            font-size: var(--text-sm);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: var(--text-5xl);
+            }
+            
+            h2 {
+                font-size: var(--text-4xl);
+            }
+            
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                justify-content: flex-start !important;
+                margin-left: 60px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-year {
+                left: -90px !important;
+                right: auto !important;
+            }
+            
+            .certification-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-md);
+            }
+            
+            .certification-buttons {
+                flex-direction: column;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-md);
+            }
+            
+            .nav-links {
+                gap: var(--space-md);
+            }
+            
+            .nav-link {
+                font-size: var(--text-xs);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: var(--text-4xl);
+            }
+            
+            h2 {
+                font-size: var(--text-3xl);
+            }
+            
+            .section-subtitle {
+                font-size: var(--text-lg);
+            }
+            
+            .timeline-content {
+                padding: var(--space-lg);
+            }
+            
+            .certification-card {
+                padding: var(--space-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Background -->
+    <div class="dynamic-bg">
+        <div class="bg-element bg-1"></div>
+        <div class="bg-element bg-2"></div>
+        <div class="bg-element bg-3"></div>
+        <div class="bg-element bg-4"></div>
+    </div>
+    <div class="animated-grid"></div>
+
+    <!-- Floating Trophies -->
+    <div class="floating-trophy trophy-1">
+        <i class="fas fa-trophy"></i>
+    </div>
+    <div class="floating-trophy trophy-2">
+        <i class="fas fa-medal"></i>
+    </div>
+    <div class="floating-trophy trophy-3">
+        <i class="fas fa-award"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="SR Design Monogram"></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Achievements Hero -->
+    <section class="achievements-hero">
+        <div class="container">
+            <h1>Achievements & Certifications</h1>
+            <p class="section-subtitle">
+                Recognition of excellence and continuous learning in the field of UX/UI design
+            </p>
+        </div>
+    </section>
+
+    <!-- Achievements Timeline -->
+    <section class="achievements-timeline">
+        <div class="container">
+            <h2>Achievements Timeline</h2>
+            <p class="section-subtitle">
+                Key milestones and recognitions throughout my design journey
+            </p>
+            
+            <div class="timeline-container">
+                <div class="timeline">
+                    <!-- 2025 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <div class="achievement-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Designathon 2025 – Top 5 National Finalist</h3>
+                                <p>Selected among 200+ participants nationally for developing sustainable consumption solutions through behavioral design. Created a comprehensive design system for circular economy platforms.</p>
+                                <div class="achievement-skills">
+                                    <span class="skill-tag">Behavioral Design</span>
+                                    <span class="skill-tag">Sustainability</span>
+                                    <span class="skill-tag">Design Systems</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2025 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <div class="achievement-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>AIgnite Hackathon – Top 8 National Finalist</h3>
+                                <p>Created AI-powered accessibility solutions for healthcare interfaces with real-time voice interaction. Developed a patent-pending voice navigation system for elderly users.</p>
+                                <div class="achievement-skills">
+                                    <span class="skill-tag">AI Integration</span>
+                                    <span class="skill-tag">Accessibility</span>
+                                    <span class="skill-tag">Voice UI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <div class="achievement-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>MediBay Project – Excellence in Healthcare Design</h3>
+                                <p>Received award for MediBay platform redesign, recognized for innovative approach to elderly healthcare accessibility and voice-enabled interfaces. Group project that gained widespread recognition in hackathon circles.</p>
+                                <div class="achievement-skills">
+                                    <span class="skill-tag">Healthcare UX</span>
+                                    <span class="skill-tag">Accessibility</span>
+                                    <span class="skill-tag">Voice Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2024 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <div class="achievement-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Insvaganza 2024 – Data Visualization Excellence</h3>
+                                <p>Created Data Viz UI/UX for the Cricket Bidding website for our college's annual event Insvaganza which got recognized and appreciated by many outsiders for its innovative approach to sports data visualization.</p>
+                                <div class="achievement-skills">
+                                    <span class="skill-tag">Data Visualization</span>
+                                    <span class="skill-tag">Sports Analytics</span>
+                                    <span class="skill-tag">Real-time UI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="certifications">
+        <div class="container">
+            <h2>Professional Certifications</h2>
+            <p class="section-subtitle">
+                Validated expertise through industry-recognized certifications and continuous learning
+            </p>
+            
+            <div class="certifications-grid">
+                <!-- Google UX Design -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="certification-title">
+                            <span class="certification-issuer">Google Career Certificates</span>
+                            <h3>UI/UX Design Professional Certificate</h3>
+                        </div>
+                    </div>
+                    <p class="certification-description">
+                        Comprehensive certification covering user research, wireframing, prototyping, and usability testing. Completed 7-course specialization with capstone project focused on healthcare accessibility.
+                    </p>
+                    <div class="certification-skills">
+                        <span class="skill-tag">User Research</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Usability Testing</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+                    <div class="certification-buttons">
+                        <button class="btn btn-primary view-learnings" data-cert="google">
+                            <i class="fas fa-graduation-cap"></i>
+                            View Learnings
+                        </button>
+                        <button class="btn btn-secondary view-certification">
+                            <i class="fas fa-file-certificate"></i>
+                            View Certification
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Social Media Marketing -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <div class="certification-title">
+                            <span class="certification-issuer">HubSpot Academy</span>
+                            <h3>Social Media Marketing Certification</h3>
+                        </div>
+                    </div>
+                    <p class="certification-description">
+                        Professional certification in social media strategy, content creation, and analytics. Focus on building brand presence and engaging communities through strategic digital marketing.
+                    </p>
+                    <div class="certification-skills">
+                        <span class="skill-tag">Social Strategy</span>
+                        <span class="skill-tag">Content Creation</span>
+                        <span class="skill-tag">Analytics</span>
+                        <span class="skill-tag">Community Building</span>
+                    </div>
+                    <div class="certification-buttons">
+                        <button class="btn btn-primary view-learnings" data-cert="social">
+                            <i class="fas fa-graduation-cap"></i>
+                            View Learnings
+                        </button>
+                        <button class="btn btn-secondary view-certification">
+                            <i class="fas fa-file-certificate"></i>
+                            View Certification
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- NN/g -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="certification-title">
+                            <span class="certification-issuer">Nielsen Norman Group</span>
+                            <h3>UX Master Certification</h3>
+                        </div>
+                    </div>
+                    <p class="certification-description">
+                        Advanced certification in UX methodologies, interaction design, and usability principles from the world's leading UX research and consulting firm. Focus on evidence-based design practices.
+                    </p>
+                    <div class="certification-skills">
+                        <span class="skill-tag">UX Strategy</span>
+                        <span class="skill-tag">Interaction Design</span>
+                        <span class="skill-tag">Usability Principles</span>
+                        <span class="skill-tag">Research Methods</span>
+                    </div>
+                    <div class="certification-buttons">
+                        <button class="btn btn-primary view-learnings" data-cert="nng">
+                            <i class="fas fa-graduation-cap"></i>
+                            View Learnings
+                        </button>
+                        <button class="btn btn-secondary view-certification">
+                            <i class="fas fa-file-certificate"></i>
+                            View Certification
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- IDF -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="certification-title">
+                            <span class="certification-issuer">Interaction Design Foundation</span>
+                            <h3>UI Design Patterns & HCI</h3>
+                        </div>
+                    </div>
+                    <p class="certification-description">
+                        Specialized certification in UI design patterns, HCI principles, and designing for different platforms and devices. Emphasis on creating intuitive and efficient user interfaces.
+                    </p>
+                    <div class="certification-skills">
+                        <span class="skill-tag">UI Patterns</span>
+                        <span class="skill-tag">HCI Principles</span>
+                        <span class="skill-tag">Mobile Design</span>
+                        <span class="skill-tag">Web Design</span>
+                    </div>
+                    <div class="certification-buttons">
+                        <button class="btn btn-primary view-learnings" data-cert="idf">
+                            <i class="fas fa-graduation-cap"></i>
+                            View Learnings
+                        </button>
+                        <button class="btn btn-secondary view-certification">
+                            <i class="fas fa-file-certificate"></i>
+                            View Certification
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Accessibility -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i class="fas fa-universal-access"></i>
+                        </div>
+                        <div class="certification-title">
+                            <span class="certification-issuer">IAAP</span>
+                            <h3>Accessibility Core Competencies</h3>
+                        </div>
+                    </div>
+                    <p class="certification-description">
+                        Professional certification in accessibility standards, WCAG guidelines, and inclusive design practices for digital products. Focus on creating accessible experiences for all users.
+                    </p>
+                    <div class="certification-skills">
+                        <span class="skill-tag">WCAG 2.1</span>
+                        <span class="skill-tag">Inclusive Design</span>
+                        <span class="skill-tag">Accessibility Testing</span>
+                        <span class="skill-tag">Assistive Tech</span>
+                    </div>
+                    <div class="certification-buttons">
+                        <button class="btn btn-primary view-learnings" data-cert="accessibility">
+                            <i class="fas fa-graduation-cap"></i>
+                            View Learnings
+                        </button>
+                        <button class="btn btn-secondary view-certification">
+                            <i class="fas fa-file-certificate"></i>
+                            View Certification
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- MIT -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-badge">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="certification-title">
+                            <span class="certification-issuer">MIT Professional Education</span>
+                            <h3>Design Thinking & Innovation</h3>
+                        </div>
+                    </div>
+                    <p class="certification-description">
+                        Advanced certification in design thinking methodologies, innovation frameworks, and leading design-driven organizations. Strategic approach to problem-solving and innovation.
+                    </p>
+                    <div class="certification-skills">
+                        <span class="skill-tag">Design Thinking</span>
+                        <span class="skill-tag">Innovation</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Strategy</span>
+                    </div>
+                    <div class="certification-buttons">
+                        <button class="btn btn-primary view-learnings" data-cert="mit">
+                            <i class="fas fa-graduation-cap"></i>
+                            View Learnings
+                        </button>
+                        <button class="btn btn-secondary view-certification">
+                            <i class="fas fa-file-certificate"></i>
+                            View Certification
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-nav">
+                    <a href="index.html" class="footer-nav-link">Home</a>
+                    <a href="about.html" class="footer-nav-link">About</a>
+                    <a href="projects.html" class="footer-nav-link">Projects</a>
+                    <a href="achievements.html" class="footer-nav-link">Achievements</a>
+                    <a href="contact.html" class="footer-nav-link">Contact</a>
+                </div>
+                <p class="footer-copyright">
+                    © 2026 Sourasish Roy. All rights reserved. Crafted with passion and precision.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Learnings Modal -->
+    <div id="learningsModal" class="learnings-modal">
+        <button class="close-modal" id="closeLearningsModal">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="learningsContent" class="modal-content">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== NAVIGATION SCROLL EFFECT =====
+            const nav = document.querySelector('.nav');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll <= 0) {
+                    nav.style.transform = 'translateY(0)';
+                    return;
+                }
+                
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    nav.style.transform = 'translateY(-100%)';
+                } else {
+                    nav.style.transform = 'translateY(0)';
+                }
+                
+                lastScroll = currentScroll;
+            });
+
+            // ===== LEARNINGS MODAL =====
+            const learningsModal = document.getElementById('learningsModal');
+            const closeLearningsModal = document.getElementById('closeLearningsModal');
+            const learningsContent = document.getElementById('learningsContent');
+            const viewLearningsBtns = document.querySelectorAll('.view-learnings');
+            
+            // Learnings data for certifications
+            const learningsData = {
+                google: {
+                    title: "Google UI/UX Design Professional Certificate",
+                    issuer: "Google Career Certificates",
+                    keyLearnings: [
+                        "Mastered the complete UX design process from user research to high-fidelity prototypes",
+                        "Learned to conduct effective user interviews and usability testing sessions",
+                        "Developed skills in creating user personas, user journey maps, and wireframes",
+                        "Gained expertise in accessibility design principles and WCAG guidelines",
+                        "Completed a capstone project focused on healthcare accessibility for elderly users"
+                    ],
+                    skillsGained: [
+                        "User Research & Analysis",
+                        "Wireframing & Prototyping",
+                        "Usability Testing",
+                        "Accessibility Design",
+                        "Design Thinking"
+                    ],
+                    impact: "This certification transformed my approach to UX design, providing a structured framework for solving complex design problems. The healthcare accessibility project directly influenced my MediBay project design.",
+                    projects: "Applied learnings to redesign healthcare interfaces, resulting in innovative solutions for elderly healthcare accessibility."
+                },
+                social: {
+                    title: "Social Media Marketing Certification",
+                    issuer: "HubSpot Academy",
+                    keyLearnings: [
+                        "Mastered social media strategy development and content planning",
+                        "Learned to analyze social media metrics and optimize campaigns",
+                        "Developed skills in community building and engagement strategies",
+                        "Gained expertise in brand storytelling across social platforms",
+                        "Learned to integrate social media with overall marketing strategy"
+                    ],
+                    skillsGained: [
+                        "Social Strategy",
+                        "Content Creation",
+                        "Analytics & Insights",
+                        "Community Management",
+                        "Brand Storytelling"
+                    ],
+                    impact: "This certification enhanced my understanding of how design intersects with marketing strategy, allowing me to create designs that not only look good but also drive engagement and conversion.",
+                    projects: "Applied social media principles to design projects, creating interfaces that encourage sharing and community interaction."
+                },
+                nng: {
+                    title: "UX Master Certification",
+                    issuer: "Nielsen Norman Group",
+                    keyLearnings: [
+                        "Advanced understanding of evidence-based UX research methodologies",
+                        "Mastered interaction design principles and best practices",
+                        "Learned to conduct comprehensive heuristic evaluations",
+                        "Gained expertise in usability testing with diverse user groups",
+                        "Developed skills in creating design systems and pattern libraries"
+                    ],
+                    skillsGained: [
+                        "UX Research Methods",
+                        "Interaction Design",
+                        "Heuristic Evaluation",
+                        "Usability Testing",
+                        "Design Systems"
+                    ],
+                    impact: "This certification elevated my design practice from intuition-based to evidence-based. I now incorporate NN/g's research-backed principles into all my projects.",
+                    projects: "Implemented learnings in all major projects, resulting in more user-centered and effective design solutions."
+                },
+                idf: {
+                    title: "UI Design Patterns & Human-Computer Interaction",
+                    issuer: "Interaction Design Foundation",
+                    keyLearnings: [
+                        "Mastered common UI design patterns and when to apply them",
+                        "Deep understanding of human-computer interaction principles",
+                        "Learned to design for different devices and screen sizes",
+                        "Gained expertise in visual hierarchy and information architecture",
+                        "Developed skills in micro-interactions and motion design"
+                    ],
+                    skillsGained: [
+                        "UI Design Patterns",
+                        "HCI Principles",
+                        "Responsive Design",
+                        "Visual Hierarchy",
+                        "Motion Design"
+                    ],
+                    impact: "This certification helped me create more intuitive and efficient interfaces by understanding fundamental HCI principles and proven design patterns.",
+                    projects: "Applied UI patterns across all projects, resulting in more consistent and user-friendly interfaces."
+                },
+                accessibility: {
+                    title: "Certified Professional in Accessibility Core Competencies",
+                    issuer: "International Association of Accessibility Professionals",
+                    keyLearnings: [
+                        "Mastered WCAG 2.1 guidelines and compliance requirements",
+                        "Learned to conduct comprehensive accessibility audits",
+                        "Gained expertise in designing for assistive technologies",
+                        "Developed skills in inclusive design practices",
+                        "Learned to create accessible documentation and training materials"
+                    ],
+                    skillsGained: [
+                        "WCAG Compliance",
+                        "Accessibility Auditing",
+                        "Assistive Technology",
+                        "Inclusive Design",
+                        "Accessibility Testing"
+                    ],
+                    impact: "This certification made me a champion for accessibility in all my projects, ensuring digital products are usable by everyone regardless of ability.",
+                    projects: "Led accessibility initiatives for multiple projects, integrating inclusive design principles from the ground up."
+                },
+                mit: {
+                    title: "Design Thinking & Innovation Leadership",
+                    issuer: "MIT Professional Education",
+                    keyLearnings: [
+                        "Mastered the design thinking process for complex problem-solving",
+                        "Learned to facilitate innovation workshops and design sprints",
+                        "Gained expertise in leading design-driven organizations",
+                        "Developed skills in strategic design and business innovation",
+                        "Learned to measure and communicate design's business impact"
+                    ],
+                    skillsGained: [
+                        "Design Thinking",
+                        "Innovation Facilitation",
+                        "Strategic Design",
+                        "Business Innovation",
+                        "Design Leadership"
+                    ],
+                    impact: "This certification transformed my approach from individual contributor to strategic design thinker, able to drive innovation at project and organizational levels.",
+                    projects: "Applied design thinking methodologies to solve complex problems in healthcare, education, and community projects."
+                }
+            };
+            
+            // Open learnings modal
+            viewLearningsBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const certId = this.getAttribute('data-cert');
+                    const learnings = learningsData[certId];
+                    
+                    learningsContent.innerHTML = `
+                        <div style="padding: var(--space-2xl);">
+                            <div style="display: flex; align-items: center; gap: var(--space-lg); margin-bottom: var(--space-xl);">
+                                <div style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: var(--text-3xl); color: var(--star-white);">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <div style="display: inline-block; padding: 8px 20px; background: rgba(0, 212, 255, 0.1); border-radius: var(--radius-sm); font-size: var(--text-sm); color: var(--neon-blue); font-weight: 600; margin-bottom: var(--space-xs);">
+                                        ${learnings.issuer}
+                                    </div>
+                                    <h2 style="color: var(--star-white); font-size: var(--text-3xl);">${learnings.title}</h2>
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; gap: var(--space-2xl);">
+                                <!-- Key Learnings -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-lg); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-lightbulb"></i>
+                                        Key Learnings
+                                    </h3>
+                                    <div style="background: rgba(123, 63, 228, 0.1); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(123, 63, 228, 0.3);">
+                                        <ul style="list-style: none; padding-left: 0; display: grid; gap: var(--space-md);">
+                                            ${learnings.keyLearnings.map(learning => `
+                                                <li style="display: flex; align-items: flex-start; gap: var(--space-md);">
+                                                    <i class="fas fa-check-circle" style="color: var(--neon-blue); margin-top: 4px; flex-shrink: 0;"></i>
+                                                    <span style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; font-size: var(--text-lg);">${learning}</span>
+                                                </li>
+                                            `).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- Skills Gained -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-lg); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-tools"></i>
+                                        Skills Gained
+                                    </h3>
+                                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+                                        ${learnings.skillsGained.map(skill => `
+                                            <span style="padding: 10px 20px; background: var(--gradient-primary); border-radius: var(--radius-lg); color: var(--star-white); font-weight: 600; font-size: var(--text-base);">
+                                                ${skill}
+                                            </span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <!-- Impact -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-lg); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-chart-line"></i>
+                                        Impact on My Work
+                                    </h3>
+                                    <div style="background: rgba(0, 212, 255, 0.1); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(0, 212, 255, 0.3);">
+                                        <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; font-size: var(--text-lg);">${learnings.impact}</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Applied Projects -->
+                                <div>
+                                    <h3 style="color: var(--neon-blue); margin-bottom: var(--space-lg); font-size: var(--text-2xl); display: flex; align-items: center; gap: var(--space-sm);">
+                                        <i class="fas fa-rocket"></i>
+                                        Applied Projects
+                                    </h3>
+                                    <div style="background: rgba(255, 215, 0, 0.1); border-radius: var(--radius-lg); padding: var(--space-lg); border: 1px solid rgba(255, 215, 0, 0.3);">
+                                        <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; font-size: var(--text-lg);">${learnings.projects}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    learningsModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close learnings modal
+            closeLearningsModal.addEventListener('click', () => {
+                learningsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal on outside click
+            learningsModal.addEventListener('click', (e) => {
+                if (e.target === learningsModal) {
+                    learningsModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // View Certification buttons
+            const viewCertificationBtns = document.querySelectorAll('.view-certification');
+            
+            viewCertificationBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    alert("In a real implementation, this would open the certification PDF or image. For this demo, it shows this message.");
+                });
+            });
+
+            // ===== LOGO INTERACTION =====
+            const logo = document.querySelector('.logo');
+            logo.addEventListener('mouseenter', () => {
+                logo.style.transform = 'scale(1.15) rotate(15deg)';
+                logo.style.boxShadow = 'var(--shadow-glow)';
+            });
+            
+            logo.addEventListener('mouseleave', () => {
+                logo.style.transform = 'scale(1) rotate(0)';
+                logo.style.boxShadow = 'none';
+            });
+
+            // ===== TIMELINE INTERACTIONS =====
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            timelineItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const marker = item.querySelector('.timeline-marker');
+                    marker.style.animation = 'markerPulse 0.5s ease-in-out';
+                    
+                    setTimeout(() => {
+                        marker.style.animation = 'markerPulse 2s ease-in-out infinite';
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
