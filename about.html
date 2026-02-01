@@ -476,18 +476,25 @@
             // ===== RESUME DOWNLOAD =====
             const downloadBtn = document.getElementById('downloadResume');
             
-            downloadBtn.addEventListener('click', function() {
-                // Create a fake download for demo purposes
+            downloadBtn.addEventListener('click', function () {
+                // Change button state
                 this.innerHTML = '<i class="fas fa-check"></i> Downloading...';
                 this.style.background = 'var(--gradient-secondary)';
-                
+            
+                // Create hidden download link
+                const link = document.createElement('a');
+                link.href = 'assets/Sourasish Roy UIUX Resume.pdf'; // <-- file path
+                link.download = 'Sourasish Roy UIUX Resume.pdf';
+                document.body.appendChild(link);
+            
                 setTimeout(() => {
+                    link.click(); // trigger download
+                    document.body.removeChild(link);
+            
+                    // Reset button
                     this.innerHTML = '<i class="fas fa-download"></i> Download Resume (PDF)';
                     this.style.background = '';
-                    
-                    // In a real implementation, this would trigger actual file download
-                    alert('In a real portfolio, this would download your resume PDF. For this demo, the button shows download behavior.');
-                }, 1500);
+                }, 800);
             });
 
             // ===== LOGO INTERACTION =====
@@ -504,4 +511,5 @@
         });
     </script>
 </body>
+
 </html>
