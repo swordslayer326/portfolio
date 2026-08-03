@@ -1326,15 +1326,15 @@
             background: linear-gradient(135deg, #F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
         }
         .tool-item:nth-child(2)::before { 
-            background: linear-gradient(135deg, #470137, #9B0063, #FF2BC2);
+            background: linear-gradient(135deg, #001E36, #004C8C, #31A8FF);
         }
         .tool-item:nth-child(3)::before { 
-            background: linear-gradient(135deg, #F7B500, #FDBF00, #FF8C00);
-        }
-        .tool-item:nth-child(5)::before { 
-            background: linear-gradient(135deg, #FF9A00, #FF7A00, #FFB300);
+            background: linear-gradient(135deg, #fff8e4, #e5e5e5, #a4a4a3);
         }
         .tool-item:nth-child(4)::before { 
+            background: linear-gradient(135deg, #FF9A00, #FF7A00, #FFB300);
+        }
+        .tool-item:nth-child(5)::before { 
             background: linear-gradient(135deg, #00C4CC, #5CE1E6, #7D2AE8);
         }
 
@@ -1364,10 +1364,10 @@
 
         /* Custom icon colors */
         .tool-item:nth-child(1):hover .tool-icon { color: #1ABCFE; }
-        .tool-item:nth-child(2):hover .tool-icon { color: #FF2BC2; }
-        .tool-item:nth-child(3):hover .tool-icon { color: #FF8C00; }
-        .tool-item:nth-child(5):hover .tool-icon { color: #FF7A00; }
-        .tool-item:nth-child(4):hover .tool-icon { color: #00C4CC; }
+        .tool-item:nth-child(2):hover .tool-icon {color: #31A8FF;}        
+        .tool-item:nth-child(3):hover .tool-icon { color: #fffefd; }
+        .tool-item:nth-child(5):hover .tool-icon { color: #00C4CC; }
+        .tool-item:nth-child(4):hover .tool-icon { color: #FF7A00; }
 
         .tool-name {
             font-weight: 700;
@@ -1403,15 +1403,15 @@
             background: linear-gradient(135deg, #F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
         }
         .tool-item:nth-child(2) .proficiency-bar.filled { 
-            background: linear-gradient(135deg, #470137, #9B0063, #FF2BC2);
+            background: linear-gradient(135deg, #012547, #028abb, #ffffff);
         }
         .tool-item:nth-child(3) .proficiency-bar.filled { 
-            background: linear-gradient(135deg, #F7B500, #FDBF00, #FF8C00);
-        }
-        .tool-item:nth-child(5) .proficiency-bar.filled { 
-            background: linear-gradient(135deg, #FF9A00, #FF7A00, #FFB300);
+            background: linear-gradient(135deg, #e8e5df, #fcf4df, #000000);
         }
         .tool-item:nth-child(4) .proficiency-bar.filled { 
+            background: linear-gradient(135deg, #FF9A00, #FF7A00, #FFB300);
+        }
+        .tool-item:nth-child(5) .proficiency-bar.filled { 
             background: linear-gradient(135deg, #00C4CC, #5CE1E6, #7D2AE8);
         }
 

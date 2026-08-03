@@ -1155,7 +1155,8 @@
                             <i class="fas fa-graduation-cap"></i>
                             View Learnings
                         </button>
-                        <button class="btn btn-secondary view-certification">
+                        <button class="btn btn-secondary view-certification"
+                            onclick="window.open('https://www.coursera.org/account/accomplishments/verify/A386DQ8H9DSQ?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course', '_blank')">
                             <i class="fas fa-file-certificate"></i>
                             View Certification
                         </button>
@@ -1187,138 +1188,10 @@
                             <i class="fas fa-graduation-cap"></i>
                             View Learnings
                         </button>
-                        <button class="btn btn-secondary view-certification">
-                            <i class="fas fa-file-certificate"></i>
-                            View Certification
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- NN/g -->
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-badge">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="certification-title">
-                            <span class="certification-issuer">Nielsen Norman Group</span>
-                            <h3>UX Master Certification</h3>
-                        </div>
-                    </div>
-                    <p class="certification-description">
-                        Advanced certification in UX methodologies, interaction design, and usability principles from the world's leading UX research and consulting firm. Focus on evidence-based design practices.
-                    </p>
-                    <div class="certification-skills">
-                        <span class="skill-tag">UX Strategy</span>
-                        <span class="skill-tag">Interaction Design</span>
-                        <span class="skill-tag">Usability Principles</span>
-                        <span class="skill-tag">Research Methods</span>
-                    </div>
-                    <div class="certification-buttons">
-                        <button class="btn btn-primary view-learnings" data-cert="nng">
-                            <i class="fas fa-graduation-cap"></i>
-                            View Learnings
-                        </button>
-                        <button class="btn btn-secondary view-certification">
-                            <i class="fas fa-file-certificate"></i>
-                            View Certification
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- IDF -->
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-badge">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="certification-title">
-                            <span class="certification-issuer">Interaction Design Foundation</span>
-                            <h3>UI Design Patterns & HCI</h3>
-                        </div>
-                    </div>
-                    <p class="certification-description">
-                        Specialized certification in UI design patterns, HCI principles, and designing for different platforms and devices. Emphasis on creating intuitive and efficient user interfaces.
-                    </p>
-                    <div class="certification-skills">
-                        <span class="skill-tag">UI Patterns</span>
-                        <span class="skill-tag">HCI Principles</span>
-                        <span class="skill-tag">Mobile Design</span>
-                        <span class="skill-tag">Web Design</span>
-                    </div>
-                    <div class="certification-buttons">
-                        <button class="btn btn-primary view-learnings" data-cert="idf">
-                            <i class="fas fa-graduation-cap"></i>
-                            View Learnings
-                        </button>
-                        <button class="btn btn-secondary view-certification">
-                            <i class="fas fa-file-certificate"></i>
-                            View Certification
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Accessibility -->
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-badge">
-                            <i class="fas fa-universal-access"></i>
-                        </div>
-                        <div class="certification-title">
-                            <span class="certification-issuer">IAAP</span>
-                            <h3>Accessibility Core Competencies</h3>
-                        </div>
-                    </div>
-                    <p class="certification-description">
-                        Professional certification in accessibility standards, WCAG guidelines, and inclusive design practices for digital products. Focus on creating accessible experiences for all users.
-                    </p>
-                    <div class="certification-skills">
-                        <span class="skill-tag">WCAG 2.1</span>
-                        <span class="skill-tag">Inclusive Design</span>
-                        <span class="skill-tag">Accessibility Testing</span>
-                        <span class="skill-tag">Assistive Tech</span>
-                    </div>
-                    <div class="certification-buttons">
-                        <button class="btn btn-primary view-learnings" data-cert="accessibility">
-                            <i class="fas fa-graduation-cap"></i>
-                            View Learnings
-                        </button>
-                        <button class="btn btn-secondary view-certification">
-                            <i class="fas fa-file-certificate"></i>
-                            View Certification
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- MIT -->
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-badge">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="certification-title">
-                            <span class="certification-issuer">MIT Professional Education</span>
-                            <h3>Design Thinking & Innovation</h3>
-                        </div>
-                    </div>
-                    <p class="certification-description">
-                        Advanced certification in design thinking methodologies, innovation frameworks, and leading design-driven organizations. Strategic approach to problem-solving and innovation.
-                    </p>
-                    <div class="certification-skills">
-                        <span class="skill-tag">Design Thinking</span>
-                        <span class="skill-tag">Innovation</span>
-                        <span class="skill-tag">Leadership</span>
-                        <span class="skill-tag">Strategy</span>
-                    </div>
-                    <div class="certification-buttons">
-                        <button class="btn btn-primary view-learnings" data-cert="mit">
-                            <i class="fas fa-graduation-cap"></i>
-                            View Learnings
-                        </button>
-                        <button class="btn btn-secondary view-certification">
-                            <i class="fas fa-file-certificate"></i>
-                            View Certification
-                        </button>
+                  <button class="btn btn-secondary view-certification" data-file="images/Social Media Certificate.pdf.pdf">
+                    <i class="fas fa-file-certificate"></i>
+                    View Certification
+                </button>
                     </div>
                 </div>
             </div>
@@ -1606,10 +1479,10 @@
             
             // View Certification buttons
             const viewCertificationBtns = document.querySelectorAll('.view-certification');
-            
+
             viewCertificationBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
-                    alert("In a real implementation, this would open the certification PDF or image. For this demo, it shows this message.");
+                    window.open('images/Social Media Certificate.pdf', '_blank');
                 });
             });
 

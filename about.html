@@ -276,9 +276,8 @@
             <!-- Adobe XD -->
             <div class="tool-item">
                 <div class="tool-icon">
-                    <img src="images/xd.png" alt="Adobe XD">
-                </div>
-                <h3 class="tool-name">Adobe XD</h3>
+<img src="images/adobe-ps.png" alt="Adobe PS" style="width: 64px; height: 64px; object-fit: cover;">                </div>
+                <h3 class="tool-name">Adobe Photoshop </h3>
                 <div class="proficiency-bars">
                     <div class="proficiency-bar filled"></div>
                     <div class="proficiency-bar filled"></div>
@@ -292,9 +291,9 @@
             <!-- Sketch -->
             <div class="tool-item">
                 <div class="tool-icon">
-                    <img src="images/sketch.png" alt="Sketch">
+                    <img src="images/framer02.jpg" style="width: 64px; height: 64px; object-fit: cover; border-radius: 10%;" alt="framer">
                 </div>
-                <h3 class="tool-name">Sketch</h3>
+                <h3 class="tool-name">Framer</h3>
                 <div class="proficiency-bars">
                     <div class="proficiency-bar filled"></div>
                     <div class="proficiency-bar filled"></div>
@@ -307,23 +306,7 @@
 
             <!-- Canva -->
             <div class="tool-item">
-                <div class="tool-icon">
-                    <img src="images/canva.png" alt="Canva">
-                </div>
-                <h3 class="tool-name">Canva</h3>
-                <div class="proficiency-bars">
-                    <div class="proficiency-bar filled"></div>
-                    <div class="proficiency-bar filled"></div>
-                    <div class="proficiency-bar filled"></div>
-                    <div class="proficiency-bar filled"></div>
-                    <div class="proficiency-bar filled"></div>
-                </div>
-                <div class="proficiency-text">Expert</div>
-            </div>
-
-            <!-- Adobe Illustrator -->
-            <div class="tool-item">
-                <div class="tool-icon">
+                 <div class="tool-icon">
                     <img src="images/illustrator.png" alt="Adobe Illustrator">
                 </div>
                 <h3 class="tool-name">Adobe Illustrator</h3>
@@ -335,6 +318,23 @@
                     <div class="proficiency-bar"></div>
                 </div>
                 <div class="proficiency-text">Advanced</div>
+                
+            </div>
+
+            <!-- Adobe Illustrator -->
+            <div class="tool-item">
+               <div class="tool-icon">
+                    <img src="images/canva.png" alt="Canva">
+                </div>
+                <h3 class="tool-name">Canva</h3>
+                <div class="proficiency-bars">
+                    <div class="proficiency-bar filled"></div>
+                    <div class="proficiency-bar filled"></div>
+                    <div class="proficiency-bar filled"></div>
+                    <div class="proficiency-bar filled"></div>
+                    <div class="proficiency-bar filled"></div>
+                </div>
+                <div class="proficiency-text">Expert</div>
             </div>
 
         </div>
@@ -446,10 +446,10 @@
                         filledCount = 3;
                         break;
                     case 3: // Illustrator - 70% (3.5 bars -> 4 bars)
-                        filledCount = 5;
+                        filledCount = 4;
                         break;
                     case 4: // Canva - 100% (5 bars)
-                        filledCount = 4;
+                        filledCount = 5;
                         break;
                 }
                 
@@ -483,8 +483,8 @@
             
                 // Create hidden download link
                 const link = document.createElement('a');
-                link.href = 'Sourasish Roy UIUX Resume.pdf'; // <-- file path
-                link.download = 'Sourasish Roy UIUX Resume.pdf';
+                link.href = 'Sourasish Roy - UIUX Designer Resume.pdf'; // <-- file path
+                link.download = 'Sourasish Roy - UIUX Designer Resume.pdf';
                 document.body.appendChild(link);
             
                 setTimeout(() => {
